@@ -10,7 +10,7 @@ const { TIMEOUT } = require("dns");
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public/images"))
+app.use(express.static("public"))
 
 app.get("/", function (req, res) {
 
@@ -32,6 +32,10 @@ app.post("/", function (req, res) {
             const feelsLike = weatherData.main.feels_like;
             const humidity = weatherData.main.humidity;
             const windSpeed = weatherData.wind.speed;
+            const timezone = weatherData.timeZone;
+            const d= new Date((weatherData.sys.sunrise + weatherData.timezone)*1000);
+            
+            
 
             const imgUrl = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
             console.log(weatherData);
@@ -40,10 +44,10 @@ app.post("/", function (req, res) {
             res.write(`<style type="text/css">
             body {
               font-family: 'Garamond';
-              background-image: url("/public/images/bg.jpg");
-              background-size: cover;
-              background-repeat: no-repeat;
+              background-image: url("/images/bg.jpg");
               background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
               width:100%;
               height:100vh;
             }
