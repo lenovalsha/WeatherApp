@@ -1,6 +1,52 @@
-body{
+body {
+    font-family: 'Garamond';
     background-image: url("/images/bg.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100%;
+    height: 100vh;
+    color: #34495E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 100px;
+    position: relative;
+    top: -50px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -50px;
+}
+
+input {
+    border-radius: 25px;
+    width: 75%;
+    height: 50px;
+    border: 2px solid #9D6254;
+    font-size: 20px;
+    color: #9D6254;
+    text-align: center;
+}
+
+button {
+    border-radius: 25px;
+    width: 25%;
+    height: 50px;
+    border: 2px solid #9D6254;
+    font-size: 30px;
+    color: #9D6254;
+}
+
+button:hover {
+    background-color: #9D6254;
+    color: white;
 }
